@@ -4,208 +4,379 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A213698 - e-Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font Baharu: Playfair Display & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-color: #6750A4;
-            --primary-container: #EADDFF;
-            --on-primary-container: #21005D;
-            --background: #FEF7FF;
+            /* Palet Warna Premium Baru: Deep Corporate Blue & Gold Accent */
+            --primary-blue: #0A192F;
+            --light-blue-bg: #F4F7FA;
+            --accent-gold: #D4AF37;
+            --dark-gold: #AA8417;
             --surface: #FFFFFF;
-            --text-dark: #1D1B20;
-            --text-light: #49454F;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --border-soft: #E2E8F0;
+            --badge-bg: #FFFDF5;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--background);
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
             margin: 0;
             padding: 0;
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Header Section */
+        /* Header Section Baru - Lebih Eksklusif */
         .header {
-            background: linear-gradient(135deg, #EADDFF 0%, #F3EDF7 100%);
-            padding: 60px 20px;
+            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+            padding: 80px 20px 140px;
             text-align: center;
-            border-bottom: 1px solid #E6E1E5;
+            color: #FFFFFF;
+            position: relative;
+        }
+
+        /* Ruang Gambar Profil Baharu */
+        .profile-avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background-color: #E2E8F0;
+            margin: 0 auto 20px;
+            border: 4px solid var(--accent-gold);
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 2.8rem;
-            color: var(--on-primary-container);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #FFFFFF;
             font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
         .header .subtitle {
-            font-size: 1.2rem;
-            color: var(--text-light);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.4rem;
+            color: var(--accent-gold);
             margin-top: 10px;
-            font-weight: 500;
+            font-weight: 400;
         }
 
-        /* Student Info Dashboard Bar */
+        /* Student Info Dashboard Bar - Gaya Rounded Pill Moden */
         .info-dashboard {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             background: var(--surface);
-            max-width: 900px;
-            margin: -35px auto 40px;
-            padding: 25px;
-            border-radius: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 1px solid #E6E1E5;
+            max-width: 850px;
+            margin: -60px auto 50px;
+            padding: 28px;
+            border-radius: 50px; /* Lebih bulat berbanding asal */
+            border: 1px solid var(--border-soft);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.06);
+            gap: 20px;
+            position: relative;
+            z-index: 10;
         }
 
         .info-box {
-            flex: 1;
-            min-width: 180px;
             text-align: center;
-            padding: 10px;
+            position: relative;
+        }
+
+        .info-box:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background-color: var(--border-soft);
         }
 
         .info-box h4 {
             margin: 0;
-            color: var(--primary-color);
-            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.2px;
+            font-weight: 600;
         }
 
         .info-box p {
             margin: 8px 0 0;
             font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-dark);
+            font-size: 1.05rem;
+            color: var(--primary-blue);
         }
 
-        /* Interactive Navigation Tabs */
+        /* Navigation Menu - Bar Minimalis Elegan */
         .tabs-nav {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            max-width: 900px;
-            margin: 0 auto 30px;
-            padding: 0 10px;
-            overflow-x: auto;
+            flex-wrap: wrap;
+            gap: 12px;
+            max-width: 850px;
+            margin: 0 auto 50px;
+            padding: 0 10px 20px;
+            border-bottom: 2px solid var(--border-soft);
         }
 
         .tab-btn {
-            background: var(--surface);
-            border: 1px solid #79747E;
-            padding: 12px 24px;
-            font-size: 0.95rem;
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
             font-weight: 600;
-            border-radius: 100px;
             cursor: pointer;
-            color: var(--text-light);
+            color: var(--text-muted);
             transition: all 0.3s ease;
-            white-space: nowrap;
+            border-radius: 30px;
         }
 
-        .tab-btn.active, .tab-btn:hover {
-            background-color: var(--primary-container);
-            color: var(--on-primary-container);
-            border-color: var(--primary-color);
+        .tab-btn:hover {
+            color: var(--primary-blue);
+            background-color: #E2E8F0;
         }
 
-        /* Content Main Container */
+        .tab-btn.active {
+            color: #FFFFFF;
+            background-color: var(--primary-blue);
+            box-shadow: 0 4px 12px rgba(10, 25, 47, 0.2);
+        }
+
+        /* Container Kandungan Utama */
         .main-container {
             max-width: 900px;
-            margin: 0 auto 60px;
+            margin: 0 auto 80px;
             padding: 0 20px;
         }
 
         .tab-content {
             display: none;
-            background: var(--surface);
-            padding: 40px;
-            border-radius: 28px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
-            border: 1px solid #E6E1E5;
         }
 
         .tab-content.active {
             display: block;
+            animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Gaya Kad Grid untuk Tugasan & Projek */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .portfolio-card {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            border: 1px solid var(--border-soft);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        /* Gaya Standard untuk Tab Berasaskan Teks */
+        .text-card-layout {
+            background: var(--surface);
+            border-radius: 32px;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            border: 1px solid var(--border-soft);
         }
 
         h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-container);
-            padding-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-blue);
+            font-size: 2.4rem;
             margin-top: 0;
-            font-size: 1.8rem;
+            margin-bottom: 30px;
+            font-weight: 700;
         }
 
         h3 {
-            color: var(--on-primary-container);
-            margin-top: 25px;
-            font-size: 1.3rem;
-            background: var(--primary-container);
-            padding: 8px 16px;
-            border-radius: 8px;
-            display: inline-block;
+            color: var(--primary-blue);
+            margin-top: 40px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 14px;
         }
 
-        ul {
-            padding-left: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        /* Placeholder style for screenshots/links */
-        .media-placeholder {
-            background: #F4EFF4;
-            border: 2px dashed #CAC4D0;
-            border-radius: 16px;
-            padding: 30px;
+        /* Butang Main Video YouTube */
+        .youtube-container {
             text-align: center;
+            margin: 10px 0 25px;
+            position: relative;
+        }
+
+        .youtube-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background-color: var(--primary-blue);
+            border-radius: 50%;
+            box-shadow: 0 8px 20px rgba(10, 25, 47, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        .youtube-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--dark-gold);
+        }
+
+        .youtube-btn svg {
+            width: 22px;
+            height: 22px;
+            fill: #FFFFFF;
+            margin-left: 3px;
+        }
+
+        /* Gambar/Screenshot Placeholder */
+        .image-box {
+            width: 100%;
+            height: 190px;
+            background-color: var(--light-blue-bg);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px dashed #CBD5E1;
+            margin: 20px 0 10px;
+            overflow: hidden;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Lencana SDG Berwajah Baru */
+        .sdg-banner {
+            background-color: var(--badge-bg);
+            color: var(--dark-gold);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            display: inline-block;
             margin: 15px 0;
-            color: var(--text-light);
+            font-size: 0.85rem;
+            border: 1px solid #FDE68A;
         }
 
         .link-button {
             display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
+            background: var(--primary-blue);
+            color: #FFFFFF;
+            padding: 12px 24px;
             text-decoration: none;
-            border-radius: 100px;
+            border-radius: 12px;
             font-weight: 600;
-            margin-top: 10px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            margin-top: 20px;
+            text-align: center;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(10, 25, 47, 0.15);
         }
 
         .link-button:hover {
-            opacity: 0.9;
+            background: var(--dark-gold);
+            transform: translateY(-2px);
         }
 
-        .sdg-badge {
-            background: #2D9CDB;
-            color: white;
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 10px;
+        /* Kotak Hiasan Refleksi Ringkas */
+        .reflection-quote {
+            background-color: var(--light-blue-bg);
+            border-left: 4px solid var(--accent-gold);
+            padding: 20px;
+            border-radius: 0 16px 16px 0;
+            font-style: normal;
+            font-size: 0.9rem;
+            margin-top: 25px;
+            color: var(--text-dark);
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 14px;
+            color: var(--text-dark);
+        }
+
+        /* Responsive Layouts */
+        @media (max-width: 768px) {
+            .info-dashboard {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 25px;
+                border-radius: 24px;
+            }
+            .info-box:not(:last-child)::after {
+                display: none;
+            }
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .text-card-layout {
+                padding: 30px;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER SECTION -->
     <div class="header">
-        <h1>AINA HANISAH BINTI MOHD ZAINUDDIN</h1> <!-- 💡 Sila tukar nama penuh awak di sini -->
+        <!-- BAHARU: Ruang Gambar Profil Anda -->
+        <div class="profile-avatar">
+            <!-- Gantikan 'gambar-saya.jpg' dengan nama fail atau link gambar anda -->
+            <img src="gambar-saya.jpg" alt="Aina Hanisah">
+        </div>
+        <h1>AINA HANISAH BINTI MOHD ZAINUDDIN</h1>
         <div class="subtitle">Mobile Application Development e-Portfolio</div>
     </div>
 
-    <!-- 1. MANDATORY ELEMENT: STUDENT PROFILE DASHBOARD -->
     <div class="info-dashboard">
         <div class="info-box">
             <h4>Matric No</h4>
@@ -221,148 +392,211 @@
         </div>
     </div>
 
-    <!-- TABS NAVIGATION -->
     <div class="tabs-nav">
-        <button class="tab-btn active" onclick="openTab(event, 'profile')">Profile</button>
-        <button class="tab-btn" onclick="openTab(event, 'labs')">Lab Submissions</button>
-        <button class="tab-btn" onclick="openTab(event, 'projects')">Project Submissions</button>
+        <button class="tab-btn active" onclick="openTab(event, 'profile')">Home</button>
+        <button class="tab-btn" onclick="openTab(event, 'labs')">Labs</button>
+        <button class="tab-btn" onclick="openTab(event, 'projects')">Projects</button>
         <button class="tab-btn" onclick="openTab(event, 'reflection')">Reflection</button>
-        <button class="tab-btn" onclick="openTab(event, 'skills')">Skills & Tech Stack</button>
+        <button class="tab-btn" onclick="openTab(event, 'skills')">Skills</button>
         <button class="tab-btn" onclick="openTab(event, 'resources')">Resources</button>
     </div>
 
-   <!-- MAIN CONTAINER FOR CONTENTS -->
     <div class="main-container">
 
-        <!-- TAB 1: STUDENT PROFILE -->
         <div id="profile" class="tab-content active">
-            <h2>1. Student Profile</h2>
-            <h3>Introduction & Learning Goals</h3>
-            <p>I am an Information Technology (IT) student who is highly passionate about native Android application development using Kotlin and Jetpack Compose. Throughout this course, I have focused on building clean, structured, and user-centric mobile layouts aimed at solving real-world challenges.</p>
-            <p><strong>Learning Goals:</strong> To master the MVVM (Model-View-ViewModel) architectural pattern, seamlessly integrate external web services using Retrofit, and implement robust local database storage to deliver highly efficient, industry-scalable mobile applications.</p>
-            
-            <h3>Chosen SDG & One-Line Statement</h3>
-            <span class="sdg-badge">SDG 3: Good Health and Well-Being</span>
-            <p><em>"My medication management application supports healthy living by digitally simplifying compliance with daily treatment schedules to improve community well-being."</em></p>
+            <div class="text-card-layout">
+                <h2>1. Student Profile</h2>
+                <p>Welcome to my native Android development portfolio showcasing my journey from building structural layouts to deploying connected cloud solutions. This site tracks my laboratory progress and the creation of my health management application.</p>
+                
+                <h3>Introduction & Learning Goals</h3>
+                <p>I am an Information Technology (IT) student who is highly passionate about native Android application development using Kotlin and Jetpack Compose. Throughout this course, I have focused on building clean, structured, and user-centric mobile layouts aimed answering real-world challenges.</p>
+                <p><strong>Learning Goals:</strong> To master the MVVM (Model-View-ViewModel) architectural pattern, seamlessly integrate external web services using Retrofit, and implement robust local database storage to deliver highly efficient, industry-scalable mobile applications.</p>
+                
+                <h3>Chosen SDG & One-Line Statement</h3>
+                <div class="sdg-banner">SDG 3: Good Health and Well-Being</div>
+                <p><em>"My medication management application supports healthy living by digitally simplifying compliance with daily treatment schedules to improve community well-being."</em></p>
+            </div>
         </div>
 
-        <!-- TAB 2: LAB SUBMISSIONS -->
         <div id="labs" class="tab-content">
-            <h2>2. Lab Submissions</h2>
-            
-            <h3>Lab 1 — UI</h3>
-            <p><strong>Description:</strong> This lab focused on learning the fundamentals of building a native Android user interface (UI) using Jetpack Compose. I constructed the initial structural layouts for the medication management application, which included organizing basic UI components such as student information, matric number, and simple card layouts.</p>
-            <div class="media-placeholder">
-                <p>[ Place Your Lab 1 Screenshots Here ]</p>
-                <a href="#" class="link-button" target="_blank">📺 Watch YouTube Video</a>
-            </div>
-            <p><strong>Reflection:</strong> Through this task, I gained a solid understanding of the core anatomy of an Android Studio project and mastered the use of basic layout composables like Column, Row, and Box to create clean, responsive screen arrangements.</p>
+            <h2>2. Laboratory Exercises</h2>
+            <div class="grid-layout">
+                
+                <div class="portfolio-card">
+                    <div>
+                        <div class="youtube-container">
+                            <a href="https://youtu.be/1k6XDHITHkc?si=m39OlQ_3w7broQe2" class="youtube-btn" target="_blank" title="Watch YouTube Video">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </a>
+                        </div>
+                        <h3>Lab 1: UI Foundation</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Building basic layout primitives and learning UI item alignment using Jetpack Compose.</p>
+                        <div class="image-box">[ Screenshot Lab 1 ]</div>
+                    </div>
+                    <div class="reflection-quote">
+                        I learned to structure standard screens using rows, columns, and modifiers. It gave me a strong foundation for arranging components visually using Kotlin.
+                    </div>
+                </div>
 
-            <h3>Lab 2 — Interaction</h3>
-            <p><strong>Description:</strong> This lab emphasized user interaction and dynamic event handling within the application. I implemented click event listeners on the medication 'TAKE' button, managed state effectively using remember and mutableStateOf, and dynamically updated the medication status on the screen whenever the user interacted with the button.</p>
-            <div class="media-placeholder">
-                <p>[ Place Your Lab 2 Screenshots Here ]</p>
-                <a href="#" class="link-button" target="_blank">📺 Watch YouTube Video</a>
-            </div>
-            <p><strong>Reflection:</strong> I learned the vital importance of the 'State' concept in Jetpack Compose, understanding how the UI automatically triggers a recomposition to reflect data updates immediately after a user action.</p>
+                <div class="portfolio-card">
+                    <div>
+                        <div class="youtube-container">
+                            <a href="https://youtu.be/7SWhAGGMVcA?si=FvuluNTLpH0P7Hat" class="youtube-btn" target="_blank" title="Watch YouTube Video">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </a>
+                        </div>
+                        <h3>Lab 2: User Interaction</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Implementing interactive components, forms, buttons, and state variables into layouts.</p>
+                        <div class="image-box">[ Screenshot Lab 2 ]</div>
+                    </div>
+                    <div class="reflection-quote">
+                        I mastered handling user inputs using state tracking tools like mutableStateOf. It helped me understand how dynamic value updates refresh layouts.
+                    </div>
+                </div>
 
-            <h3>Lab 3 — Material Design</h3>
-            <p><strong>Description:</strong> This lab applied the modern Android design guidelines using Material Design 3 (MD3). I customized the application's theme using a calming pastel color scheme (highly suitable for health apps), implemented a consistent typography hierarchy, and added a subtle micro-animation (pulsing scale transition) to the daily 'Streak' card to encourage user consistency in taking their medications.</p>
-            <div class="media-placeholder">
-                <p>[ Place Your Lab 3 Screenshots Here ]</p>
-                <a href="#" class="link-button" target="_blank">📺 Watch YouTube Video</a>
-            </div>
-            <p><strong>Reflection:</strong> I realized that a polished visual aesthetic, a psychologically comforting color palette for patients, and tasteful micro-animations play a massive role in significantly elevating the overall User Experience (UX).</p>
+                <div class="portfolio-card">
+                    <div>
+                        <div class="youtube-container">
+                            <a href="https://youtu.be/WiF95p27evs?si=88sAqhqpgI9k89r6" class="youtube-btn" target="_blank" title="Watch YouTube Video">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </a>
+                        </div>
+                        <h3>Lab 3: Material Design</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Polishing screen styling, color rules, and cards according to Material tokens.</p>
+                        <div class="image-box">[ Screenshot Lab 3 ]</div>
+                    </div>
+                    <div class="reflection-quote">
+                        I implemented typography and custom shapes for consistent UI styling. It showed me how uniform guidelines improve application accessibility.
+                    </div>
+                </div>
 
-            <h3>Lab 4 — Navigation</h3>
-            <p><strong>Description:</strong> This task involved managing a multi-screen flow within the application. I implemented a robust navigation system using NavHost, defined proper screen routes, and integrated a 'Bottom Navigation Bar' to allow seamless switching between the Home, Meds, Family, Reports, and Profile screens.</p>
-            <div class="media-placeholder">
-                <p>[ Place Your Lab 4 Screenshots Here ]</p>
-                <a href="#" class="link-button" target="_blank">📺 Watch YouTube Video</a>
-            </div>
-            <p><strong>Reflection:</strong> I successfully managed multi-screen transitions safely without losing or corrupting the application's existing state data, adhering strictly to Android's architectural guidelines for decoupling UI logic.</p>
+                <div class="portfolio-card">
+                    <div>
+                        <div class="youtube-container">
+                            <a href="https://youtu.be/seRqiRJKjWY?si=gyvWFmn5k_SXFw8o" class="youtube-btn" target="_blank" title="Watch YouTube Video">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </a>
+                        </div>
+                        <h3>Lab 4: Navigation</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Managing structured routes and screen swapping logic across components securely.</p>
+                        <div class="image-box">[ Screenshot Lab 4 ]</div>
+                    </div>
+                    <div class="reflection-quote">
+                        I successfully managed multi-screen transitions safely without losing or corrupting the application's existing state data.
+                    </div>
+                </div>
 
-            <h3>Lab 5 — Room</h3>
-            <p><strong>Description:</strong> The final lab focused on establishing permanent local storage (data persistence). I integrated an SQLite database into the app using the Room Database library by creating Entities, Data Access Objects (DAO), and a Repository class. This setup ensures that users can add, read, and save their medication logs securely on their device.</p>
-            <div class="media-placeholder">
-                <p>[ Place Your Lab 5 Screenshots Here ]</p>
-                <a href="#" class="link-button" target="_blank">📺 Watch YouTube Video</a>
+                <div class="portfolio-card">
+                    <div>
+                        <div class="youtube-container">
+                            <a href="https://youtu.be/RIaB7-j1FIE?si=8j67zpsor0bayCcH" class="youtube-btn" target="_blank" title="Watch YouTube Video">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </a>
+                        </div>
+                        <h3>Lab 5: Room Database</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Configuring persistent client tables, entity models, and structural access operations.</p>
+                        <div class="image-box">[ Screenshot Lab 5 ]</div>
+                    </div>
+                    <div class="reflection-quote">
+                        I mastered systematic data management using Room, establishing a stable offline-first capability for the application.
+                    </div>
+                </div>
+
             </div>
-            <p><strong>Reflection:</strong> I mastered systematic data management using Room, which guarantees that critical health logs are never lost and remain fully accessible at any time. This effectively establishes a stable offline-first capability for the application.</p>
         </div>
 
-        <!-- TAB 3: PROJECT SUBMISSIONS -->
         <div id="projects" class="tab-content">
             <h2>3. Project Submissions</h2>
-            
-            <h3>Project 1</h3>
-            <p><strong>Content:</strong> Lab 4 + Working features</p>
-            <p><strong>Problem Statement:</strong> Chronic patients frequently forget to take their medications at the correct times, severely hindering the overall effectiveness of their medical recovery process.</p>
-            <div class="media-placeholder">
-                <p>[ Screenshots & Demo Project 1 ]</p>
-                <a href="#" class="link-button" target="_blank">🔗 Project 1 GitHub Repository</a>
-                <a href="#" class="link-button" target="_blank">📺 Watch YouTube VSR</a>
-            </div>
-            <p><strong>Lessons Learned:</strong> I realized the critical importance of decoupling business logic from the UI layer by utilizing the ViewModel approach instead of clustering operational code directly inside UI Composable functions.</p>
+            <div class="grid-layout">
+                
+                <div class="portfolio-card">
+                    <div>
+                        <div class="youtube-container">
+                            <a href="https://youtu.be/6J21nDjEENE?si=LVHrQONS_r9YPXaQ" class="youtube-btn" target="_blank" title="Watch Video">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </a>
+                        </div>
+                        <h3>Project 1</h3>
+                        <p><strong>Content:</strong> Lab 4 + Working features</p>
+                        <p><strong>Problem Statement:</strong> Chronic patients frequently forget to take their medications at the correct times, severely hindering medical recovery process.</p>
+                        <div class="image-box">[ Screenshot/Demo Project 1 ]</div>
+                    </div>
+                    <div>
+                        <p><strong>Lessons Learned:</strong> Decoupling business logic from the UI layer by utilizing the ViewModel approach instead of clustering operational code directly inside UI composables.</p>
+                        <a href="#" class="link-button" target="_blank">🔗 GitHub Repository</a>
+                    </div>
+                </div>
 
-            <h3>Project 2</h3>
-            <p><strong>Content:</strong> Lab 5 + 2 Additional Screens + Web API (Retrofit) + Sensors + Cloud integration.</p>
-            <p><strong>Problem Statement:</strong> Dynamic and constantly changing health data environments require the application to seamlessly fetch real-time updates from web services while remaining fully optimized and responsive in an offline mode.</p>
-            <div class="media-placeholder">
-                <p>[ Screenshots & Demo Project 2 ]</p>
-                <a href="#" class="link-button" target="_blank">🔗 Project 2 GitHub Repository</a>
-                <a href="#" class="link-button" target="_blank">📺 Watch YouTube VSR</a>
+                <div class="portfolio-card">
+                    <div>
+                        <div class="youtube-container">
+                            <a href="#" class="youtube-btn" target="_blank" title="Watch Video">
+                                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </a>
+                        </div>
+                        <h3>Project 2</h3>
+                        <p><strong>Content:</strong> Lab 5 + 2 Additional Screens + Web API (Retrofit) + Sensors + Cloud integration.</p>
+                        <p><strong>Problem Statement:</strong> Dynamic health data environments require the application to seamlessly fetch updates from web services while remaining optimized in offline mode.</p>
+                        <div class="image-box">[ Screenshot/Demo Project 2 ]</div>
+                    </div>
+                    <div>
+                        <p><strong>Lessons Learned:</strong> Integrated asynchronous web requests using Kotlin Coroutines and mastered network exception handling to display alerts without crashing.</p>
+                        <a href="#" class="link-button" target="_blank">🔗 GitHub Repository</a>
+                    </div>
+                </div>
+
             </div>
-            <p><strong>Lessons Learned:</strong> I successfully integrated asynchronous web API requests using Kotlin Coroutines and mastered network exception handling to display automatic offline alerts without crashing the application infrastructure.</p>
         </div>
 
-        <!-- TAB 4: REFLECTION & LEARNING JOURNEY -->
         <div id="reflection" class="tab-content">
-            <h2>4. Reflection & Learning Journey</h2>
-            <h3>Growth from Lab 1 to Project 2</h3>
-            <p>My technical journey evolved dramatically from simply arranging static text fields in Lab 1 to constructing a fully functional dynamic application equipped with its own Room database and live external cloud servers via Retrofit in Project 2. This has greatly enhanced my critical thinking and architectural approach to coding mobile systems.</p>
-            
-            <h3>Challenges faced</h3>
-            <p>The biggest hurdle was resolving database schema migrations and properly configuring Git identity configurations, alongside ensuring flawless data synchronization transitions between web APIs (Live mode) and local fallback structures (Offline mode) without app crashes.</p>
-            
-            <h3>SDG Impact</h3>
-            <p>By engineering this automated healthcare application, a direct contribution to SDG 3 was achieved, providing the community with a systematic, user-friendly, and completely free alternative for self-health and medication tracking.</p>
+            <div class="text-card-layout">
+                <h2>4. Reflection & Learning Journey</h2>
+                <h3>Growth from Lab 1 to Project 2</h3>
+                <p>My technical journey evolved dramatically from simply arranging static text fields in Lab 1 to constructing a fully functional dynamic application equipped with its own Room database and live external cloud servers via Retrofit in Project 2. This has greatly enhanced my critical thinking and architectural approach to coding mobile systems.</p>
+                
+                <h3>Challenges faced</h3>
+                <p>The biggest hurdle was resolving database schema migrations and properly configuring Git identity configurations, alongside ensuring flawless data synchronization transitions between web APIs (Live mode) and local fallback structures (Offline mode) without app crashes.</p>
+                
+                <h3>SDG Impact</h3>
+                <p>By engineering this automated healthcare application, a direct contribution to SDG 3 was achieved, providing the community with a systematic, user-friendly, and completely free alternative for self-health and medication tracking.</p>
+            </div>
         </div>
 
-        <!-- TAB 5: SKILLS & TECH STACK -->
         <div id="skills" class="tab-content">
-            <h2>5. Skills & Tech Stack</h2>
-            <p>Here is a list of programming languages, frameworks, and tools that I can now use with strong confidence:</p>
-            <ul>
-                <li><strong>Language:</strong> Kotlin (Native Android Development)</li>
-                <li><strong>UI Framework:</strong> Jetpack Compose & Material Design 3</li>
-                <li><strong>Architecture Pattern:</strong> MVVM (Model-View-ViewModel)</li>
-                <li><strong>Networking:</strong> Retrofit HTTP Client & Gson Converter</li>
-                <li><strong>Local Database:</strong> SQLite Room Persistence Library</li>
-                <li><strong>Asynchronous Coding:</strong> Kotlin Coroutines & StateFlow/Kotlin Flow</li>
-                <li><strong>Version Control:</strong> Git & GitHub Pages Deployment</li>
-            </ul>
+            <div class="text-card-layout">
+                <h2>5. Skills & Tech Stack</h2>
+                <p>Here is a list of programming languages, frameworks, and tools that I can now use with strong confidence:</p>
+                <ul>
+                    <li><strong>Language:</strong> Kotlin (Native Android Development)</li>
+                    <li><strong>UI Framework:</strong> Jetpack Compose & Material Design 3</li>
+                    <li><strong>Architecture Pattern:</strong> MVVM (Model-View-ViewModel)</li>
+                    <li><strong>Networking:</strong> Retrofit HTTP Client & Gson Converter</li>
+                    <li><strong>Local Database:</strong> SQLite Room Persistence Library</li>
+                    <li><strong>Asynchronous Coding:</strong> Kotlin Coroutines & StateFlow/Kotlin Flow</li>
+                    <li><strong>Version Control:</strong> Git & GitHub Pages Deployment</li>
+                </ul>
+            </div>
         </div>
 
-        <!-- TAB 6: RESOURCES & REFERENCES -->
         <div id="resources" class="tab-content">
-            <h2>6. Resources & References</h2>
-            <ul>
-                <li><strong>Web APIs Used:</strong> <a href="https://raw.githubusercontent.com/" target="_blank">GitHub Content API</a> - Provides randomized healthcare tips and pharmaceutical information blocks.</li>
-                <li><strong>Libraries & Dependency:</strong>
-                    <ul>
-                        <li>Jetpack Navigation Compose for screen route handling.</li>
-                        <li>Room Database Runtime & KSP Compiler components.</li>
-                        <li>Retrofit2 Core and Gson Converter libraries.</li>
-                    </ul>
-                </li>
-                <li><strong>AI Assistance Acknowledgement:</strong> Sincere appreciation is extended to Artificial Intelligence (AI Collaboration) platforms for providing structural code debugging guidance, optimizing ViewModel logic flows, and organizing this responsive HTML e-Portfolio framework.</li>
-            </ul>
+            <div class="text-card-layout">
+                <h2>6. Resources & References</h2>
+                <ul>
+                    <li><strong>Web APIs Used:</strong> <a href="https://raw.githubusercontent.com/" target="_blank" style="color: var(--primary-blue); font-weight: 600;">GitHub Content API</a> - Provides randomized healthcare tips and pharmaceutical information blocks.</li>
+                    <li><strong>Libraries & Dependency:</strong>
+                        <ul>
+                            <li>Jetpack Navigation Compose for screen route handling.</li>
+                            <li>Room Database Runtime & KSP Compiler components.</li>
+                            <li>Retrofit2 Core and Gson Converter libraries.</li>
+                        </ul>
+                    </li>
+                    <li><strong>AI Assistance Acknowledgement:</strong> Sincere appreciation is extended to Artificial Intelligence (AI Collaboration) platforms for providing structural code debugging guidance, optimizing ViewModel logic flows, and organizing this responsive HTML e-Portfolio framework.</li>
+                </ul>
+            </div>
         </div>
 
     </div>
 
-    <!-- JAVASCRIPT FOR INTERACTIVE TABS SWAP -->
     <script>
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
