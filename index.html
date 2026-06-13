@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -94,11 +93,26 @@ width:60px;height:60px;display:inline-flex;align-items:center;justify-content:ce
 background:white;border:2px solid #2D2A2B;border-radius:50%;box-shadow:4px 4px 0 var(--green);
 }
 .youtube-btn svg{fill:#2D2A2B;}
-.image-box{
-width:100%;height:200px;border-radius:20px;background:#F5F1EC;border:2px dashed #BEB7AF;
-display:flex;align-items:center;justify-content:center;overflow:hidden;
+
+/* KOD FIX UNTUK GAMBAR SCREENSHOT MENEGAK */
+.image-box {
+    width: 100%;
+    max-height: 450px;
+    border-radius: 20px;
+    background: #F5F1EC;
+    border: 2px dashed #BEB7AF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
 }
-.image-box img{width:100%;height:100%;object-fit:cover;}
+.image-box img {
+    max-width: 100%;
+    max-height: 430px;
+    object-fit: contain;
+}
+
 .sdg-banner{
 background:var(--green);color:#2D2A2B;border:2px solid #2D2A2B;border-radius:50px;
 padding:10px 20px;font-weight:700;
@@ -127,7 +141,7 @@ h2{font-size:2rem;}
 
     <div class="header">
         <div class="profile-avatar">
-            <img src="gambar-saya.jpg" alt="Aina Hanisah">
+            <img src="https://raw.githubusercontent.com/a213698/a213698-web/main/gambar-saya.jpg" alt="Aina Hanisah">
         </div>
         <h1>AINA HANISAH BINTI MOHD ZAINUDDIN</h1>
         <div class="subtitle">Mobile Application Development e-Portfolio</div>
@@ -178,6 +192,7 @@ h2{font-size:2rem;}
             <h2>2. Laboratory Exercises</h2>
             <div class="grid-layout">
                 
+                <!-- LAB 1 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -188,13 +203,15 @@ h2{font-size:2rem;}
                         <h3>Lab 1: UI Foundation</h3>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">Building basic layout primitives and learning UI item alignment using Jetpack Compose.</p>
                         <div class="image-box">
-    <img src="https://raw.githubusercontent.com/a213698/a213698-web/main/lab1.png" alt="Screenshot Lab 1">
-</div>
+                            <img src="lab1.png" alt="Screenshot Lab 1">
+                        </div>
+                    </div>
                     <div class="reflection-quote">
                         I learned to structure standard screens using rows, columns, and modifiers. It gave me a strong foundation for arranging components visually using Kotlin.
                     </div>
                 </div>
 
+                <!-- LAB 2 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -205,13 +222,15 @@ h2{font-size:2rem;}
                         <h3>Lab 2: User Interaction</h3>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">Implementing interactive components, forms, buttons, and state variables into layouts.</p>
                         <div class="image-box">
-    <img src="lab2.png" alt="Screenshot Lab 1">
-</div>
+                            <img src="lab2.png" alt="Screenshot Lab 2">
+                        </div>
+                    </div>
                     <div class="reflection-quote">
                         I mastered handling user inputs using state tracking tools like mutableStateOf. It helped me understand how dynamic value updates refresh layouts.
                     </div>
                 </div>
 
+                <!-- LAB 3 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -221,13 +240,16 @@ h2{font-size:2rem;}
                         </div>
                         <h3>Lab 3: Material Design</h3>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">Polishing screen styling, color rules, and cards according to Material tokens.</p>
-                        <div class="lab3.png">[ Screenshot Lab 3 ]</div>
+                        <div class="image-box">
+                            <img src="lab3.png" alt="Screenshot Lab 3">
+                        </div>
                     </div>
                     <div class="reflection-quote">
                         I implemented typography and custom shapes for consistent UI styling. It showed me how uniform guidelines improve application accessibility.
                     </div>
                 </div>
 
+                <!-- LAB 4 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -237,13 +259,16 @@ h2{font-size:2rem;}
                         </div>
                         <h3>Lab 4: Navigation</h3>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">Managing structured routes and screen swapping logic across components securely.</p>
-                        <div class="lab3.png">[ Screenshot Lab 4 ]</div>
+                        <div class="image-box">
+                            <img src="lab4.png" alt="Screenshot Lab 4">
+                        </div>
                     </div>
                     <div class="reflection-quote">
                         I successfully managed multi-screen transitions safely without losing or corrupting the application's existing state data.
                     </div>
                 </div>
 
+                <!-- LAB 5 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -253,7 +278,9 @@ h2{font-size:2rem;}
                         </div>
                         <h3>Lab 5: Room Database</h3>
                         <p style="font-size: 0.9rem; color: var(--text-muted);">Configuring persistent client tables, entity models, and structural access operations.</p>
-                        <div class="lab5.png">[ Screenshot Lab 5 ]</div>
+                        <div class="image-box">
+                            <img src="lab5.png" alt="Screenshot Lab 5">
+                        </div>
                     </div>
                     <div class="reflection-quote">
                         I mastered systematic data management using Room, establishing a stable offline-first capability for the application.
@@ -267,6 +294,7 @@ h2{font-size:2rem;}
             <h2>3. Project Submissions</h2>
             <div class="grid-layout">
                 
+                <!-- PROJECT 1 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -277,7 +305,9 @@ h2{font-size:2rem;}
                         <h3>Project 1</h3>
                         <p><strong>Content:</strong> Lab 4 + Working features</p>
                         <p><strong>Problem Statement:</strong> Chronic patients frequently forget to take their medications at the correct times, severely hindering medical recovery process.</p>
-                        <div class="project1.png">[ Screenshot/Demo Project 1 ]</div>
+                        <div class="image-box">
+                            <img src="project1.png" alt="Screenshot Project 1">
+                        </div>
                     </div>
                     <div>
                         <p><strong>Lessons Learned:</strong> Decoupling business logic from the UI layer by utilizing the ViewModel approach instead of clustering operational code directly inside UI composables.</p>
@@ -285,6 +315,7 @@ h2{font-size:2rem;}
                     </div>
                 </div>
 
+                <!-- PROJECT 2 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -295,7 +326,9 @@ h2{font-size:2rem;}
                         <h3>Project 2</h3>
                         <p><strong>Content:</strong> Lab 5 + 2 Additional Screens + Web API (Retrofit) + Sensors + Cloud integration.</p>
                         <p><strong>Problem Statement:</strong> Dynamic health data environments require the application to seamlessly fetch updates from web services while remaining optimized in offline mode.</p>
-                        <div class="image-box">[ Screenshot/Demo Project 2 ]</div>
+                        <div class="image-box">
+                            <img src="project2.png" alt="Screenshot Project 2">
+                        </div>
                     </div>
                     <div>
                         <p><strong>Lessons Learned:</strong> Integrated asynchronous web requests using Kotlin Coroutines and mastered network exception handling to display alerts without crashing.</p>
