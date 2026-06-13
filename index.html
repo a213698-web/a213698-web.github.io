@@ -94,10 +94,10 @@ background:white;border:2px solid #2D2A2B;border-radius:50%;box-shadow:4px 4px 0
 }
 .youtube-btn svg{fill:#2D2A2B;}
 
-/* KOD FIX UNTUK GAMBAR SCREENSHOT MENEGAK */
+/* PENGUBAHSUAIAN CSS UNTUK IMEJ MENEGAK */
 .image-box {
     width: 100%;
-    max-height: 450px;
+    max-height: 480px; /* Mengehadkan ketinggian kotak supaya selari dengan kad */
     border-radius: 20px;
     background: #F5F1EC;
     border: 2px dashed #BEB7AF;
@@ -105,12 +105,13 @@ background:white;border:2px solid #2D2A2B;border-radius:50%;box-shadow:4px 4px 0
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 10px;
+    padding: 12px;
 }
 .image-box img {
     max-width: 100%;
-    max-height: 430px;
-    object-fit: contain;
+    max-height: 450px;
+    object-fit: contain; /* Mengekalkan bentuk asal screenshot tanpa dipotong */
+    border-radius: 12px;
 }
 
 .sdg-banner{
@@ -192,7 +193,6 @@ h2{font-size:2rem;}
             <h2>2. Laboratory Exercises</h2>
             <div class="grid-layout">
                 
-                <!-- LAB 1 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -211,7 +211,6 @@ h2{font-size:2rem;}
                     </div>
                 </div>
 
-                <!-- LAB 2 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -230,7 +229,6 @@ h2{font-size:2rem;}
                     </div>
                 </div>
 
-                <!-- LAB 3 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -249,7 +247,6 @@ h2{font-size:2rem;}
                     </div>
                 </div>
 
-                <!-- LAB 4 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -268,7 +265,6 @@ h2{font-size:2rem;}
                     </div>
                 </div>
 
-                <!-- LAB 5 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -294,7 +290,6 @@ h2{font-size:2rem;}
             <h2>3. Project Submissions</h2>
             <div class="grid-layout">
                 
-                <!-- PROJECT 1 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -310,12 +305,11 @@ h2{font-size:2rem;}
                         </div>
                     </div>
                     <div>
-                        <p><strong>Lessons Learned:</strong> Decoupling business logic from the UI layer by utilizing the ViewModel approach instead of clustering operational code directly inside UI composables.</p>
+                        <p style="margin-top: 15px;"><strong>Lessons Learned:</strong> Decoupling business logic from the UI layer by utilizing the ViewModel approach instead of clustering operational code directly inside UI composables.</p>
                         <a href="https://github.com/a213698-web/A213698_DrNazatulAini_Project1.git" class="link-button" target="_blank">🔗 GitHub Repository</a>
                     </div>
                 </div>
 
-                <!-- PROJECT 2 -->
                 <div class="portfolio-card">
                     <div>
                         <div class="youtube-container">
@@ -331,7 +325,7 @@ h2{font-size:2rem;}
                         </div>
                     </div>
                     <div>
-                        <p><strong>Lessons Learned:</strong> Integrated asynchronous web requests using Kotlin Coroutines and mastered network exception handling to display alerts without crashing.</p>
+                        <p style="margin-top: 15px;"><strong>Lessons Learned:</strong> Integrated asynchronous web requests using Kotlin Coroutines and mastered network exception handling to display alerts without crashing.</p>
                         <a href="https://github.com/a213698-web/A213698_DrNazatulAini_Project2.git" class="link-button" target="_blank">🔗 GitHub Repository</a>
                     </div>
                 </div>
