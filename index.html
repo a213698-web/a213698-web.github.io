@@ -87,11 +87,17 @@ box-shadow:10px 10px 0 var(--green);
 }
 h2{font-family:'Playfair Display',serif;font-size:3rem;margin-top:0;color:#2D2A2B;}
 h3{color:#2D2A2B;border-left:6px solid var(--pink);padding-left:15px;}
+.youtube-container{text-align:center;margin:10px 0 25px;}
+.youtube-btn{
+width:60px;height:60px;display:inline-flex;align-items:center;justify-content:center;
+background:white;border:2px solid #2D2A2B;border-radius:50%;box-shadow:4px 4px 0 var(--green);
+}
+.youtube-btn svg{fill:#2D2A2B;}
 
-/* KOD BARU: SUSUNAN BUTANG PLAY DI ATAS SCREENSHOT */
+/* PENGUBAHSUAIAN CSS UNTUK IMEJ MENEGAK */
 .image-box {
     width: 100%;
-    max-height: 480px;
+    max-height: 480px; /* Mengehadkan ketinggian kotak supaya selari dengan kad */
     border-radius: 20px;
     background: #F5F1EC;
     border: 2px dashed #BEB7AF;
@@ -100,48 +106,12 @@ h3{color:#2D2A2B;border-left:6px solid var(--pink);padding-left:15px;}
     justify-content: center;
     overflow: hidden;
     padding: 12px;
-    position: relative; /* Menjadi tapak rujukan kedudukan butang */
 }
 .image-box img {
     max-width: 100%;
     max-height: 450px;
-    object-fit: contain;
+    object-fit: contain; /* Mengekalkan bentuk asal screenshot tanpa dipotong */
     border-radius: 12px;
-    transition: filter 0.3s ease;
-}
-/* Kesan malap pada gambar bila tetikus diacah (hover) */
-.image-box:hover img {
-    filter: brightness(0.75);
-}
-/* Memosisikan butang tepat di tengah-tengah gambar */
-.image-box .youtube-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 65px;
-    height: 65px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: white;
-    border: 2px solid #2D2A2B;
-    border-radius: 50%;
-    box-shadow: 4px 4px 0 var(--green);
-    z-index: 5;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-/* Kesan interaktif apabila butang di-hover */
-.image-box .youtube-btn:hover {
-    transform: translate(-55%, -55%) scale(1.08);
-    box-shadow: 6px 6px 0 var(--pink);
-    background: #FFF;
-}
-.image-box .youtube-btn svg {
-    fill: #2D2A2B;
-    width: 26px;
-    height: 26px;
-    margin-left: 4px; /* Menolak sedikit segi tiga ke tengah bulatan */
 }
 
 .sdg-banner{
@@ -223,16 +193,17 @@ h2{font-size:2rem;}
             <h2>2. Laboratory Exercises</h2>
             <div class="grid-layout">
                 
-                <!-- LAB 1 -->
                 <div class="portfolio-card">
                     <div>
-                        <h3>Lab 1: UI Foundation</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Building basic layout primitives and learning UI item alignment using Jetpack Compose.</p>
-                        <div class="image-box">
-                            <img src="lab1.png" alt="Screenshot Lab 1">
+                        <div class="youtube-container">
                             <a href="https://youtu.be/1k6XDHITHkc?si=m39OlQ_3w7broQe2" class="youtube-btn" target="_blank" title="Watch YouTube Video">
                                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             </a>
+                        </div>
+                        <h3>Lab 1: UI Foundation</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Building basic layout primitives and learning UI item alignment using Jetpack Compose.</p>
+                        <div class="image-box">
+                            <img src="lab1.png" alt="Screenshot Lab 1">
                         </div>
                     </div>
                     <div class="reflection-quote">
@@ -240,16 +211,17 @@ h2{font-size:2rem;}
                     </div>
                 </div>
 
-                <!-- LAB 2 -->
                 <div class="portfolio-card">
                     <div>
-                        <h3>Lab 2: User Interaction</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Implementing interactive components, forms, buttons, and state variables into layouts.</p>
-                        <div class="image-box">
-                            <img src="lab2.png" alt="Screenshot Lab 2">
+                        <div class="youtube-container">
                             <a href="https://youtu.be/7SWhAGGMVcA?si=FvuluNTLpH0P7Hat" class="youtube-btn" target="_blank" title="Watch YouTube Video">
                                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             </a>
+                        </div>
+                        <h3>Lab 2: User Interaction</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Implementing interactive components, forms, buttons, and state variables into layouts.</p>
+                        <div class="image-box">
+                            <img src="lab2.png" alt="Screenshot Lab 2">
                         </div>
                     </div>
                     <div class="reflection-quote">
@@ -257,16 +229,17 @@ h2{font-size:2rem;}
                     </div>
                 </div>
 
-                <!-- LAB 3 -->
                 <div class="portfolio-card">
                     <div>
-                        <h3>Lab 3: Material Design</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Polishing screen styling, color rules, and cards according to Material tokens.</p>
-                        <div class="image-box">
-                            <img src="lab3.png" alt="Screenshot Lab 3">
+                        <div class="youtube-container">
                             <a href="https://youtu.be/WiF95p27evs?si=88sAqhqpgI9k89r6" class="youtube-btn" target="_blank" title="Watch YouTube Video">
                                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             </a>
+                        </div>
+                        <h3>Lab 3: Material Design</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Polishing screen styling, color rules, and cards according to Material tokens.</p>
+                        <div class="image-box">
+                            <img src="lab3.png" alt="Screenshot Lab 3">
                         </div>
                     </div>
                     <div class="reflection-quote">
@@ -274,16 +247,17 @@ h2{font-size:2rem;}
                     </div>
                 </div>
 
-                <!-- LAB 4 -->
                 <div class="portfolio-card">
                     <div>
-                        <h3>Lab 4: Navigation</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Managing structured routes and screen swapping logic across components securely.</p>
-                        <div class="image-box">
-                            <img src="lab4.png" alt="Screenshot Lab 4">
+                        <div class="youtube-container">
                             <a href="https://youtu.be/seRqiRJKjWY?si=gyvWFmn5k_SXFw8o" class="youtube-btn" target="_blank" title="Watch YouTube Video">
                                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             </a>
+                        </div>
+                        <h3>Lab 4: Navigation</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Managing structured routes and screen swapping logic across components securely.</p>
+                        <div class="image-box">
+                            <img src="lab1.png" alt="Screenshot Lab 1">
                         </div>
                     </div>
                     <div class="reflection-quote">
@@ -291,16 +265,17 @@ h2{font-size:2rem;}
                     </div>
                 </div>
 
-                <!-- LAB 5 -->
                 <div class="portfolio-card">
                     <div>
-                        <h3>Lab 5: Room Database</h3>
-                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Configuring persistent client tables, entity models, and structural access operations.</p>
-                        <div class="image-box">
-                            <img src="lab5.png" alt="Screenshot Lab 5">
+                        <div class="youtube-container">
                             <a href="https://youtu.be/RIaB7-j1FIE?si=8j67zpsor0bayCcH" class="youtube-btn" target="_blank" title="Watch YouTube Video">
                                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             </a>
+                        </div>
+                        <h3>Lab 5: Room Database</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Configuring persistent client tables, entity models, and structural access operations.</p>
+                        <div class="image-box">
+                            <img src="lab5.png" alt="Screenshot Lab 5">
                         </div>
                     </div>
                     <div class="reflection-quote">
@@ -315,17 +290,18 @@ h2{font-size:2rem;}
             <h2>3. Project Submissions</h2>
             <div class="grid-layout">
                 
-                <!-- PROJECT 1 -->
                 <div class="portfolio-card">
                     <div>
-                        <h3>Project 1</h3>
-                        <p><strong>Content:</strong> Lab 4 + Working features</p>
-                        <p><strong>Problem Statement:</strong> Chronic patients frequently forget to take their medications at the correct times, severely hindering medical recovery process.</p>
-                        <div class="image-box" style="margin-bottom: 20px;">
-                            <img src="project1.png" alt="Screenshot Project 1">
+                        <div class="youtube-container">
                             <a href="https://youtu.be/6J21nDjEENE?si=LVHrQONS_r9YPXaQ" class="youtube-btn" target="_blank" title="Watch Video">
                                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             </a>
+                        </div>
+                        <h3>Project 1</h3>
+                        <p><strong>Content:</strong> Lab 4 + Working features</p>
+                        <p><strong>Problem Statement:</strong> Chronic patients frequently forget to take their medications at the correct times, severely hindering medical recovery process.</p>
+                        <div class="image-box">
+                            <img src="project1.png" alt="Screenshot Project 1">
                         </div>
                     </div>
                     <div>
@@ -334,17 +310,18 @@ h2{font-size:2rem;}
                     </div>
                 </div>
 
-                <!-- PROJECT 2 -->
                 <div class="portfolio-card">
                     <div>
-                        <h3>Project 2</h3>
-                        <p><strong>Content:</strong> Lab 5 + 2 Additional Screens + Web API (Retrofit) + Sensors + Cloud integration.</p>
-                        <p><strong>Problem Statement:</strong> Dynamic health data environments require the application to seamlessly fetch updates from web services while remaining optimized in offline mode.</p>
-                        <div class="image-box" style="margin-bottom: 20px;">
-                            <img src="project2.png" alt="Screenshot Project 2">
+                        <div class="youtube-container">
                             <a href="#" class="youtube-btn" target="_blank" title="Watch Video">
                                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                             </a>
+                        </div>
+                        <h3>Project 2</h3>
+                        <p><strong>Content:</strong> Lab 5 + 2 Additional Screens + Web API (Retrofit) + Sensors + Cloud integration.</p>
+                        <p><strong>Problem Statement:</strong> Dynamic health data environments require the application to seamlessly fetch updates from web services while remaining optimized in offline mode.</p>
+                        <div class="image-box">
+                            <img src="project2.png" alt="Screenshot Project 2">
                         </div>
                     </div>
                     <div>
