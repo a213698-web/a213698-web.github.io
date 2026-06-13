@@ -6,91 +6,68 @@
     <title>A213698 - e-Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Font Baharu: Playfair Display & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            /* Palet Warna Premium Baru: Deep Corporate Blue & Gold Accent */
-            --primary-blue: #0A192F;
-            --light-blue-bg: #F4F7FA;
-            --accent-gold: #D4AF37;
-            --dark-gold: #AA8417;
+            /* Palet Warna Premium Pastel Teal & Mint */
+            --primary-teal: #116965;
+            --dark-teal: #0F2E2C;
+            --pastel-bg: #F4FAF8;
             --surface: #FFFFFF;
-            --text-dark: #1E293B;
-            --text-muted: #64748B;
-            --border-soft: #E2E8F0;
-            --badge-bg: #FFFDF5;
+            --text-dark: #2D3A3A;
+            --text-muted: #627575;
+            --border-soft: #E2ECE9;
+            --accent-coral: #FF6B8B;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8FAFC;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAFCFB;
             margin: 0;
             padding: 0;
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Header Section Baru - Lebih Eksklusif */
+        /* Header Section dengan Gaya Gradien Pastel Lembut */
         .header {
-            background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-            padding: 80px 20px 140px;
+            background: linear-gradient(135deg, #E6F4F1 0%, #F4FAF8 100%);
+            padding: 90px 20px 110px;
             text-align: center;
-            color: #FFFFFF;
-            position: relative;
-        }
-
-        /* Ruang Gambar Profil Baharu */
-        .profile-avatar {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            background-color: #E2E8F0;
-            margin: 0 auto 20px;
-            border: 4px solid var(--accent-gold);
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-
-        .profile-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            border-bottom: 1px solid var(--border-soft);
         }
 
         .header h1 {
             margin: 0;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            color: #FFFFFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 2.2rem;
+            color: var(--dark-teal);
             font-weight: 800;
-            letter-spacing: 0.5px;
+            letter-spacing: -0.5px;
         }
 
         .header .subtitle {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Instrument Serif', serif;
             font-style: italic;
-            font-size: 1.4rem;
-            color: var(--accent-gold);
-            margin-top: 10px;
+            font-size: 1.6rem;
+            color: var(--primary-teal);
+            margin-top: 8px;
             font-weight: 400;
         }
 
-        /* Student Info Dashboard Bar - Gaya Rounded Pill Moden */
+        /* Student Info Dashboard Bar - Floating Minimalist Style */
         .info-dashboard {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             background: var(--surface);
-            max-width: 850px;
-            margin: -60px auto 50px;
-            padding: 28px;
-            border-radius: 50px; /* Lebih bulat berbanding asal */
+            max-width: 800px;
+            margin: -40px auto 50px;
+            padding: 24px;
+            border-radius: 20px;
             border: 1px solid var(--border-soft);
-            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.06);
+            box-shadow: 0 12px 34px rgba(15, 46, 44, 0.04);
             gap: 20px;
-            position: relative;
-            z-index: 10;
         }
 
         .info-box {
@@ -98,66 +75,67 @@
             position: relative;
         }
 
+        /* Garisan pemisah antara kotak info */
         .info-box:not(:last-child)::after {
             content: '';
             position: absolute;
             right: -10px;
-            top: 20%;
-            height: 60%;
+            top: 15%;
+            height: 70%;
             width: 1px;
             background-color: var(--border-soft);
         }
 
         .info-box h4 {
             margin: 0;
-            color: var(--text-muted);
+            color: var(--primary-teal);
             font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
-            font-weight: 600;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .info-box p {
-            margin: 8px 0 0;
+            margin: 6px 0 0;
             font-weight: 700;
-            font-size: 1.05rem;
-            color: var(--primary-blue);
+            font-size: 1rem;
+            color: var(--dark-teal);
         }
 
-        /* Navigation Menu - Bar Minimalis Elegan */
+        /* Navigation Menu - Bar Minimalis Moden */
         .tabs-nav {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 15px;
             max-width: 850px;
             margin: 0 auto 50px;
-            padding: 0 10px 20px;
-            border-bottom: 2px solid var(--border-soft);
+            padding: 0 10px 15px;
+            border-bottom: 1px solid var(--border-soft);
         }
 
         .tab-btn {
             background: none;
             border: none;
-            padding: 10px 20px;
-            font-family: 'Inter', sans-serif;
+            padding: 8px 16px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.9rem;
             font-weight: 600;
             cursor: pointer;
             color: var(--text-muted);
-            transition: all 0.3s ease;
-            border-radius: 30px;
+            transition: all 0.2s ease;
+            border-radius: 8px;
         }
 
         .tab-btn:hover {
-            color: var(--primary-blue);
-            background-color: #E2E8F0;
+            color: var(--primary-teal);
+            background-color: var(--pastel-bg);
         }
 
         .tab-btn.active {
-            color: #FFFFFF;
-            background-color: var(--primary-blue);
-            box-shadow: 0 4px 12px rgba(10, 25, 47, 0.2);
+            color: var(--surface);
+            background-color: var(--primary-teal);
+            font-weight: 700;
         }
 
         /* Container Kandungan Utama */
@@ -173,15 +151,15 @@
 
         .tab-content.active {
             display: block;
-            animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: fadeIn 0.4s ease-out;
         }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Gaya Kad Grid untuk Tugasan & Projek */
+        /* Gaya Kad Grid untuk Senarai Tugasan Makmal & Projek */
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -191,9 +169,9 @@
 
         .portfolio-card {
             background: var(--surface);
-            border-radius: 24px;
-            padding: 35px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 24px rgba(15, 46, 44, 0.02);
             border: 1px solid var(--border-soft);
             display: flex;
             flex-direction: column;
@@ -202,42 +180,43 @@
         }
 
         .portfolio-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--accent-gold);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+            transform: translateY(-5px);
+            border-color: var(--primary-teal);
+            box-shadow: 0 16px 36px rgba(15, 46, 44, 0.05);
         }
 
-        /* Gaya Standard untuk Tab Berasaskan Teks */
+        /* Gaya Standard untuk Tab Berasaskan Teks (Profile, Reflection, dll) */
         .text-card-layout {
             background: var(--surface);
-            border-radius: 32px;
-            padding: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+            border-radius: 24px;
+            padding: 45px;
+            box-shadow: 0 8px 24px rgba(15, 46, 44, 0.02);
             border: 1px solid var(--border-soft);
         }
 
         h2 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary-blue);
-            font-size: 2.4rem;
+            font-family: 'Instrument Serif', serif;
+            font-style: italic;
+            color: var(--dark-teal);
+            font-size: 2.2rem;
             margin-top: 0;
-            margin-bottom: 30px;
-            font-weight: 700;
+            margin-bottom: 25px;
+            font-weight: 400;
         }
 
         h3 {
-            color: var(--primary-blue);
-            margin-top: 40px;
-            font-size: 1.25rem;
+            color: var(--dark-teal);
+            margin-top: 35px;
+            font-size: 1.15rem;
             font-weight: 700;
-            border-left: 4px solid var(--accent-gold);
-            padding-left: 14px;
+            border-left: 3px solid var(--primary-teal);
+            padding-left: 12px;
         }
 
-        /* Butang Main Video YouTube */
+        /* Butang Main Video YouTube Tersuai (Premium Dark & Safe) */
         .youtube-container {
             text-align: center;
-            margin: 10px 0 25px;
+            margin: 10px 0 20px;
             position: relative;
         }
 
@@ -245,39 +224,39 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 56px;
-            height: 56px;
-            background-color: var(--primary-blue);
+            width: 52px;
+            height: 52px;
+            background-color: var(--dark-teal);
             border-radius: 50%;
-            box-shadow: 0 8px 20px rgba(10, 25, 47, 0.2);
+            box-shadow: 0 6px 16px rgba(15, 46, 44, 0.15);
             transition: all 0.2s ease;
         }
 
         .youtube-btn:hover {
-            transform: scale(1.1);
-            background-color: var(--dark-gold);
+            transform: scale(1.08);
+            background-color: var(--primary-teal);
         }
 
         .youtube-btn svg {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             fill: #FFFFFF;
-            margin-left: 3px;
+            margin-left: 2px;
         }
 
-        /* Gambar/Screenshot Placeholder */
+        /* Gambar/Screenshot Placeholder - Ditukar Ke Antaramuka Bersih */
         .image-box {
             width: 100%;
-            height: 190px;
-            background-color: var(--light-blue-bg);
-            border-radius: 16px;
+            height: 180px;
+            background-color: var(--pastel-bg);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-muted);
             font-size: 0.85rem;
             font-weight: 500;
-            border: 1px dashed #CBD5E1;
+            border: 1px dashed #B8D3CD;
             margin: 20px 0 10px;
             overflow: hidden;
         }
@@ -288,67 +267,64 @@
             object-fit: cover;
         }
 
-        /* Lencana SDG Berwajah Baru */
+        /* Lencana UI (SDG / Pautan Github) */
         .sdg-banner {
-            background-color: var(--badge-bg);
-            color: var(--dark-gold);
-            padding: 10px 20px;
+            background-color: #EBF7F5;
+            color: var(--primary-teal);
+            padding: 8px 16px;
             border-radius: 30px;
             font-weight: 700;
             display: inline-block;
             margin: 15px 0;
             font-size: 0.85rem;
-            border: 1px solid #FDE68A;
+            border: 1px solid #D1EAE5;
         }
 
         .link-button {
             display: inline-block;
-            background: var(--primary-blue);
+            background: var(--dark-teal);
             color: #FFFFFF;
-            padding: 12px 24px;
+            padding: 10px 22px;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 8px;
             font-weight: 600;
             font-size: 0.85rem;
-            margin-top: 20px;
+            margin-top: 15px;
             text-align: center;
-            transition: all 0.2s;
-            box-shadow: 0 4px 12px rgba(10, 25, 47, 0.15);
+            transition: background 0.2s;
         }
 
         .link-button:hover {
-            background: var(--dark-gold);
-            transform: translateY(-2px);
+            background: var(--primary-teal);
         }
 
         /* Kotak Hiasan Refleksi Ringkas */
         .reflection-quote {
-            background-color: var(--light-blue-bg);
-            border-left: 4px solid var(--accent-gold);
-            padding: 20px;
-            border-radius: 0 16px 16px 0;
+            background-color: var(--pastel-bg);
+            border-left: 3px solid var(--primary-teal);
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
             font-style: normal;
-            font-size: 0.9rem;
-            margin-top: 25px;
+            font-size: 0.88rem;
+            margin-top: 20px;
             color: var(--text-dark);
         }
 
         ul {
-            padding-left: 22px;
+            padding-left: 20px;
         }
 
         li {
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             color: var(--text-dark);
         }
 
-        /* Responsive Layouts */
+        /* Responsive Layouts peranti mudah alih */
         @media (max-width: 768px) {
             .info-dashboard {
                 grid-template-columns: 1fr;
                 gap: 15px;
-                padding: 25px;
-                border-radius: 24px;
+                padding: 20px;
             }
             .info-box:not(:last-child)::after {
                 display: none;
@@ -357,10 +333,7 @@
                 grid-template-columns: 1fr;
             }
             .text-card-layout {
-                padding: 30px;
-            }
-            h2 {
-                font-size: 1.8rem;
+                padding: 25px;
             }
         }
     </style>
@@ -368,11 +341,6 @@
 <body>
 
     <div class="header">
-        <!-- BAHARU: Ruang Gambar Profil Anda -->
-        <div class="profile-avatar">
-            <!-- Gantikan 'gambar-saya.jpg' dengan nama fail atau link gambar anda -->
-            <img src="gambar-saya.jpg" alt="Aina Hanisah">
-        </div>
         <h1>AINA HANISAH BINTI MOHD ZAINUDDIN</h1>
         <div class="subtitle">Mobile Application Development e-Portfolio</div>
     </div>
@@ -582,7 +550,7 @@
             <div class="text-card-layout">
                 <h2>6. Resources & References</h2>
                 <ul>
-                    <li><strong>Web APIs Used:</strong> <a href="https://raw.githubusercontent.com/" target="_blank" style="color: var(--primary-blue); font-weight: 600;">GitHub Content API</a> - Provides randomized healthcare tips and pharmaceutical information blocks.</li>
+                    <li><strong>Web APIs Used:</strong> <a href="https://raw.githubusercontent.com/" target="_blank" style="color: var(--primary-teal); font-weight: 600;">GitHub Content API</a> - Provides randomized healthcare tips and pharmaceutical information blocks.</li>
                     <li><strong>Libraries & Dependency:</strong>
                         <ul>
                             <li>Jetpack Navigation Compose for screen route handling.</li>
